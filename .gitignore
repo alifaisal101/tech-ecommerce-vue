@@ -21,3 +21,13 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# draw.io
+*.drawio.bkp
+*.drawio.dtmp
+
+#env
+.env
+
+#sandbox, etc
+html-test
