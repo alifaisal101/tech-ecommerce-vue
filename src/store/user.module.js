@@ -1,4 +1,4 @@
-import { api } from '@/config';
+import appConfig from '@/config';
 import { jsonReq } from '@/util/constants/requests';
 
 export default {
@@ -26,8 +26,8 @@ export default {
       };
 
       try {
-        const res = await fetch(api, { ...jsonReq, body });
-        onclose.log(res);
+        const res = await fetch(appConfig.api, { ...jsonReq, body });
+        console.log(res);
       } catch (err) {
         console.log(err);
       }

@@ -1,1 +1,5 @@
-export { api } from './../config/app.json';
+import appConfig from './../config/app.json';
+
+export default {
+  ...appConfig,
+};
