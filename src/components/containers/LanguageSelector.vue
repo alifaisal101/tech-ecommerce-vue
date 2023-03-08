@@ -4,7 +4,11 @@
       <v-btn color="primary" v-bind="props"> {{ currentLocale }} </v-btn>
     </template>
     <v-list>
-      <v-list-item v-for="(item, i) in items" :key="i">
+      <v-list-item
+        v-for="(item, i) in items"
+        :key="i"
+        @click="setLocale(item.locale)"
+      >
         <v-list-item-title>{{ item.title }}</v-list-item-title>
       </v-list-item>
     </v-list>
@@ -13,6 +17,13 @@
 
 <script>
 export default {
+  methods: {
+    setLocale(newLocale) {
+      this.$i18n.locale = newLocale;
+      this.i18n_locale = newLocale;
+    },
+  },
+
   data() {
     return {
       items: [
@@ -30,7 +41,6 @@ export default {
       let currentLangaugeTitle;
 
       this.items.map((item) => {
-        console.log(this.i18n_locale === item.locale, item.title);
         if (this.i18n_locale === item.locale) {
           currentLangaugeTitle = item.title;
         }
