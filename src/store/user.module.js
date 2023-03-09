@@ -15,7 +15,7 @@ export default {
 
   mutations: {
     logout(state) {
-      state.token = undefined;
+      state.id = state.token.expDate = state.token.value = undefined;
     },
   },
   actions: {
