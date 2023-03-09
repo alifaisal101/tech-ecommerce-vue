@@ -1,9 +1,14 @@
 <template>
   <v-app-bar on="4" class="navbar">
-    <v-app-bar-title text="TechoShop" class="navbar-title" />
+    <v-app-bar-title class="navbar-title">
+      <router-link class="no-a-defaults" to="/">TechoShop</router-link>
+    </v-app-bar-title>
     <ThemeToggler color="white" />
     <user-menu v-if="isLoggedIn">User thing</user-menu>
-    <v-btn color="white" v-else>Login</v-btn>
+
+    <v-btn color="white" v-else
+      ><router-link class="no-a-defaults" to="/login">Login</router-link></v-btn
+    >
     <LanguageSelectorVue />
   </v-app-bar>
 </template>
@@ -23,7 +28,7 @@ export default {
 
   computed: {
     isLoggedIn() {
-      return this.$store.getters.isLoggedIn || true;
+      return this.$store.getters.isLoggedIn;
     },
   },
 };

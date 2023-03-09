@@ -36,4 +36,9 @@ export default {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.no-a-defaults {
+  text-decoration: none;
+  color: inherit;
+}
 </style>

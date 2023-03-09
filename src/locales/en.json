@@ -1,3 +1,7 @@
 {
-  "default": {}
+  "default": {
+    "email-label": "Email",
+    "password-label": "password",
+    "login": "Login"
+  }
 }
