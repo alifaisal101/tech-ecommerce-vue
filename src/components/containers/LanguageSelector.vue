@@ -1,7 +1,9 @@
 <template>
   <v-menu transition="slide-y-transition">
     <template v-slot:activator="{ props }">
-      <v-btn color="primary" v-bind="props"> {{ currentLocale }} </v-btn>
+      <v-btn class="selectLangBtn" color="red-lighten-5" v-bind="props">
+        {{ currentLocale }}
+      </v-btn>
     </template>
     <v-list>
       <v-list-item
@@ -51,5 +53,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.selectLangBtn {
+  letter-spacing: 0px;
+}
 </style>

@@ -1,23 +1,19 @@
 <template>
   <v-app-bar on="4" class="navbar">
     <v-app-bar-title text="TechoShop" class="navbar-title" />
-    <v-btn icon>
-      <v-icon>mdi-magnify</v-icon>
-    </v-btn>
-
-    <v-btn icon>
-      <v-icon>mdi-heart</v-icon>
-    </v-btn>
+    <ThemeToggler color="white" />
     <LanguageSelectorVue />
   </v-app-bar>
 </template>
 
 <script>
 import LanguageSelectorVue from "@/components/containers/LanguageSelector.vue";
+import ThemeToggler from "@/components/containers/ThemeToggler.vue";
 export default {
   name: "ShopNavbarGlobal",
   components: {
     LanguageSelectorVue,
+    ThemeToggler,
   },
 };
 </script>
