@@ -12,11 +12,11 @@
         :label="t('password-label')"
       ></v-text-field>
       <v-btn
-        type="submit"
         block
         class="mt-2 submitBtn"
         elevation="4"
         color="light-blue-darken-1"
+        @click="login"
         >{{ t("login") }}</v-btn
       >
     </v-form>
@@ -31,6 +31,16 @@ export default {
     const { t } = useI18n();
     return { t };
   },
+
+  methods: {
+    login() {
+      this.$store.dispatch("login", {
+        email: this.email,
+        password: this.password,
+      });
+    },
+  },
+
   data() {
     return {
       email: "",

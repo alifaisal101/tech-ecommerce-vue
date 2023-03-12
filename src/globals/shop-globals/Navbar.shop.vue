@@ -6,9 +6,10 @@
     <ThemeToggler color="white" />
     <user-menu v-if="isLoggedIn">User thing</user-menu>
 
-    <v-btn color="white" v-else
-      ><router-link class="no-a-defaults" to="/login">Login</router-link></v-btn
+    <router-link v-else class="no-a-defaults" to="/login"
+      ><v-btn color="white">Login</v-btn></router-link
     >
+
     <LanguageSelectorVue />
   </v-app-bar>
 </template>
@@ -28,6 +29,7 @@ export default {
 
   computed: {
     isLoggedIn() {
+      console.log(this.$store.getters.isLoggedIn);
       return this.$store.getters.isLoggedIn;
     },
   },

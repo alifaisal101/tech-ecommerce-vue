@@ -1,4 +1,4 @@
-export const jsonReq = {
+export const jsonPostReq = {
   method: 'POST',
   headers: {
     Accept: 'application/json',

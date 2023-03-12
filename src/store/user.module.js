@@ -1,21 +1,24 @@
 import appConfig from '@/config';
-import { jsonReq } from '@/util/constants/requests';
+import { jsonPostReq } from '@/util/constants/requests';
 
 export default {
-  state: {
-    id: undefined,
-    token: { value: undefined, expDate: undefined },
-    isCompany: undefined,
-  },
+  state: { user: {} },
   getters: {
     isLoggedIn(state) {
-      return state.id || false;
+      if (state.user?._id && state.user?.token?.value) {
+        return true;
+      }
+      return false;
     },
   },
 
   mutations: {
-    logout(state) {
-      state.id = state.token.expDate = state.token.value = undefined;
+    setUser(state, payload) {
+      state.user = payload;
+    },
+
+    unSetUser(state) {
+      state.user = {};
     },
   },
   actions: {
@@ -26,11 +29,19 @@ export default {
       };
 
       try {
-        const res = await fetch(appConfig.api, { ...jsonReq, body });
-        console.log(res);
+        const res = await fetch(`${appConfig.api}/auth/login`, {
+          ...jsonPostReq,
+          body: JSON.stringify(body),
+        });
+        const resBody = await res.json();
+        context.commit('setUser', resBody);
       } catch (err) {
         console.log(err);
       }
+    },
+
+    async logout(context) {
+      return context.commit('unSetUser');
     },
   },
 };
