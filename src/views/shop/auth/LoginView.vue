@@ -3,13 +3,17 @@
     <v-form validate-on="submit" @submit.prevent="submit">
       <v-text-field
         v-model="email"
-        :rules="rules"
         :label="t('email-label')"
+        @blur="validateEmail"
+        type="email"
+        :error-messages="emailError"
       ></v-text-field>
       <v-text-field
         v-model="password"
-        :rules="rules"
+        type="password"
         :label="t('password-label')"
+        @blur="validatePassword"
+        :error-messages="passwordError"
       ></v-text-field>
       <v-btn
         block
@@ -34,17 +38,41 @@ export default {
 
   methods: {
     login() {
+      if (!this.emailErrors || !this.passwordErrors) {
+        return this.validateEmail() & this.validatePassword();
+      }
       this.$store.dispatch("login", {
         email: this.email,
         password: this.password,
       });
+    },
+
+    validateEmail() {
+      if (!this.email) {
+        return (this.emailError = "Email can't be empty.");
+      }
+
+      if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
+        return (this.emailError = "Email is invalid.");
+      }
+
+      return (this.emailError = "");
+    },
+    validatePassword() {
+      if (!this.password) {
+        return (this.passwordError = "Password can't be empty.");
+      }
+
+      return (this.passwordError = "");
     },
   },
 
   data() {
     return {
       email: "",
+      emailError: "",
       password: "",
+      passwordError: "",
     };
   },
 };
