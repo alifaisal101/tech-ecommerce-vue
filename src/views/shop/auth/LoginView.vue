@@ -49,18 +49,18 @@ export default {
 
     validateEmail() {
       if (!this.email) {
-        return (this.emailError = "Email can't be empty.");
+        return (this.emailError = this.t("empty-email"));
       }
 
       if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
-        return (this.emailError = "Email is invalid.");
+        return (this.emailError = this.t("invalid-email"));
       }
 
       return (this.emailError = "");
     },
     validatePassword() {
       if (!this.password) {
-        return (this.passwordError = "Password can't be empty.");
+        return (this.passwordError = this.t("empty-password"));
       }
 
       return (this.passwordError = "");

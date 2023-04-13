@@ -1,7 +1,10 @@
 {
   "default": {
     "email-label": "Email",
+    "empty-email": "Email can't be empty.",
+    "invalid-email": "Email can't be empty.",
     "password-label": "password",
+    "empty-password": "Password can't be empty.",
     "login": "Login"
   }
 }

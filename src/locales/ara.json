@@ -1,7 +1,10 @@
 {
   "default": {
     "email-label": "أيميل",
+    "empty-email": "يجب ادخال أيميل",
+    "invalid-email": "الأيميل غير صحيح",
     "password-label": "كلمة السر",
+    "empty-password": "يجب ادخال كلمة مرور",
     "login": "تسجيل الدخول"
   }
 }
