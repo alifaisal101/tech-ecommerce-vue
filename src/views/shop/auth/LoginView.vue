@@ -1,6 +1,6 @@
 <template>
   <v-sheet width="300" class="mx-auto loginForm">
-    <v-form validate-on="submit" @submit.prevent="submit">
+    <v-form validate-on="submit" @submit.prevent="">
       <v-text-field
         v-model="email"
         :label="t('email-label')"
@@ -38,8 +38,9 @@ export default {
 
   methods: {
     login() {
-      if (!this.emailErrors || !this.passwordErrors) {
-        return this.validateEmail() & this.validatePassword();
+      this.validateEmail() & this.validatePassword();
+      if (this.emailError || this.passwordError) {
+        return false;
       }
       this.$store.dispatch("login", {
         email: this.email,

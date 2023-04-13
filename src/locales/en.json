@@ -2,9 +2,11 @@
   "default": {
     "email-label": "Email",
     "empty-email": "Email can't be empty.",
-    "invalid-email": "Email can't be empty.",
-    "password-label": "password",
+    "invalid-email": "Email is invalid.",
+    "password-label": "Password",
     "empty-password": "Password can't be empty.",
-    "login": "Login"
+    "login": "Login",
+    "register": "Register",
+    "non-alph-chars": "Only letters are allowed"
   }
 }

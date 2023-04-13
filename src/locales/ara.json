@@ -5,6 +5,8 @@
     "invalid-email": "الأيميل غير صحيح",
     "password-label": "كلمة السر",
     "empty-password": "يجب ادخال كلمة مرور",
-    "login": "تسجيل الدخول"
+    "login": "تسجيل الدخول",
+    "register": "تسجيل",
+    "non-alph-chars": "فقط الحروف"
   }
 }

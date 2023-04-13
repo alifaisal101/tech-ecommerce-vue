@@ -22,6 +22,8 @@ function loadLocaleMessages() {
 
 export default createI18n({
   legacy: false,
+  fallbackRoot: true,
+  silentFallbackWarn: true,
   locale: i18n_locale,
   fallbackLocale: i18n_fallback_locale,
   messages: loadLocaleMessages(),
