@@ -7,6 +7,7 @@
     "empty-password": "يجب ادخال كلمة مرور",
     "login": "تسجيل الدخول",
     "register": "تسجيل",
-    "non-alph-chars": "فقط الحروف"
+    "non-alph-chars": "فقط الحروف",
+    "register-link": "تسجيل حساب"
   }
 }

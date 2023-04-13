@@ -6,20 +6,32 @@
     <ThemeToggler color="white" />
     <user-menu v-if="isLoggedIn">User thing</user-menu>
 
-    <router-link v-else class="no-a-defaults" to="/login"
-      ><v-btn color="white">Login</v-btn></router-link
-    >
+    <div v-else>
+      <router-link class="no-a-defaults" to="/login"
+        ><v-btn color="white">{{ t("login") }}</v-btn></router-link
+      >
+      <router-link class="no-a-defaults" to="/register">
+        <v-btn color="white"> {{ t("register-link") }} </v-btn>
+      </router-link>
+    </div>
 
     <LanguageSelectorVue />
   </v-app-bar>
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
+
 import LanguageSelectorVue from "@/components/containers/LanguageSelector.vue";
 import ThemeToggler from "@/components/containers/ThemeToggler.vue";
 import UserMenu from "@/components/containers/UserMenu.vue";
 
 export default {
+  setup() {
+    const { t } = useI18n();
+    return { t };
+  },
+
   name: "ShopNavbarGlobal",
   components: {
     LanguageSelectorVue,
