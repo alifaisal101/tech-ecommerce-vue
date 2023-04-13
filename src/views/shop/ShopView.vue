@@ -1,6 +1,6 @@
 <template>
   <navbar-shop-vue />
-  <router-view />
+  <router-view class="content" />
   <footer-shop-vue />
 </template>
 
@@ -16,5 +16,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.content {
+  height: 99%;
+}
 </style>
