@@ -19,7 +19,7 @@ export default {
       "title": "home page"
     },
     "ara": {
-      "title": "الصفحة الؤئيةسة"
+      "title": "الصفحة الرئيسية"
     }
   }
 </i18n>
